@@ -7,7 +7,7 @@
 			const choices=['rock','paper','scissors']
 			//randomize choice
 			const randomChoice=Math.floor(Math.random()*choices.length)
-			return randomChoice
+			return choices[randomChoice]
 		}
 		function playRound(playerSel, computerSel){
 			const playerChoice=playerSel.toLowerCase()

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function computerPlay(){
+			const choices=['rock','paper','scissors']
+			//randomize choice
+			const randomChoice=Math.floor(Math.random()*choices.length)
+			return randomChoice
+		}
+		function playRound(playerSel, computerSel){
+			const playerChoice=playerSel.toLowerCase()
+			//if play and comp are same, tie
+			if (playerChoice==computerSel) {
+				outcome = 'Winner: Tie | Player Choice: ' + playerChoice + ' | Computer Choice: ' + computerSel
+			} else if (playerChoice=='rock' && computerSel == 'paper') { //if play == rock and comp == paper, lose
+				outcome = 'Winner: Computer | Player Choice: ' + playerChoice + ' | Computer Choice: ' + computerSel
+			} else if (playerChoice=='paper' && computerSel == 'scissors') {//if play == paper and comp == scissor, lose
+				outcome = 'Winner: Computer | Player Choice: ' + playerChoice + ' | Computer Choice: ' + computerSel
+			} else if (playerChoice=='scissors' && computerSel == 'rock') {//if play == scissor and comp == rock, lose
+				outcome = 'Winner: Computer | Player Choice: ' + playerChoice + ' | Computer Choice: ' + computerSel
+			} else if (playerChoice=='paper' && computerSel == 'rock') {//if play == paper and comp == rock, win
+				outcome = 'Winner: Player | Player Choice: ' + playerChoice + ' | Computer Choice: ' + computerSel
+			} else if (playerChoice=='scissors' && computerSel == 'paper') {//if play == scissor and comp == paper, win
+				outcome = 'Winner: Player | Player Choice: ' + playerChoice + ' | Computer Choice: ' + computerSel
+			} else if (playerChoice=='rock' && computerSel == 'scissors') {//if play == rock and comp == scissor, win
+				outcome = 'Winner: Player | Player Choice: ' + playerChoice + ' | Computer Choice: ' + computerSel
+			}
+			return outcome
+		}
+		const playerSel='rock'
+		const computerSel = computerPlay()
+		console.log(playRound(playerSel, computerSel))
+	</script>
+</head>
+<body>
+
+</body>
+</html>
